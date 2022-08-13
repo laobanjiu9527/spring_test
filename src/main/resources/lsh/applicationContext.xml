@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="demo" class="pers.lsh.Demo"></bean>
+
+    <bean id="user" class="pers.lsh.User">
+        <property name="age" value="18"></property> <!-- 注意这里的属性必须要有 getter 和 setter 方法才能被识别-->
+        <property name="name" value="Lsh"></property>
+        <property name="demo" ref="demo"> </property>
+        <property name="userMap">
+            <map>
+                <entry key = "1" value= "lsh1" />
+                <entry key = "2" value= "lsh2" />
+                <entry key = "3" value= "lsh3" />
+            </map>
+        </property>
+    </bean>
+</beans>
